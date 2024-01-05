@@ -18,9 +18,21 @@ namespace DewJUnit1MVC.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Output(Customer model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                ViewBag.CU = model.DetermineEmail();
+                ViewBag.Name = model.Name;
+                ViewBag.title = "Thank You";
+            }
+            else
+            {
+                ViewBag.CU = "N/A";
+                ViewBag.Name = "visitor";
+                ViewBag.title = "*extremely loud incorrect buzzer*";
+            }
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

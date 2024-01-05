@@ -1,8 +1,26 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Customer
+@{
+    ViewBag.Title = "Customer Sign-Up";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!DOCTYPE html>
+<html>
+<h1>Create Account</h1>
+<body>
+<div asp-validation-summary="All"></div>
+<div>
+    <form asp-action="Output">
+        <label>Name:</label>
+        <input asp-for="Name" type="text" />
+        <br />
+        <label>Username:</label>
+        <input asp-for="Username" type="text" />
+        <br />
+        <label>Password:</label>
+        <input asp-for="Password" type="text" />
+        <br />
+        <button type="submit">Submit</button>
+    </form>
 </div>
+</body>
+</html>

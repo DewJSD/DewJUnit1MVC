@@ -1,7 +1,12 @@
-﻿
+﻿@model Customer
 @{
-    ViewData["Title"] = "Output";
 }
-
-<h1>Output</h1>
-
+<!DOCTYPE html>
+<html>
+<body>
+<div asp-validation-summary="All"></div>
+<h1>@ViewBag.title, @ViewBag.Name!</h1>
+<br />
+<p>@Model.Username's e-mail will be @ViewBag.CU</p>
+</body>
+</html>
