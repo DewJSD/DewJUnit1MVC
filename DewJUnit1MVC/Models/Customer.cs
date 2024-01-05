@@ -14,16 +14,17 @@ namespace DewJUnit1MVC.Models
 
         public string? DetermineEmail()
         {
-            string? str = Username;
-            string? custEmail = string.Empty;
+            string? str = Username; //temp variable
+            // passes str through a filter to trash the special characters and build a new string with the allowed ones
             StringBuilder sb = new StringBuilder();
             foreach (char c in str)
             {
-                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+                if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '_')
                 {
                     sb.Append(c);
                 }
             }
+            // returns processed string as an email address
             return sb.ToString() + "@thisisfake.com";
         }
     }

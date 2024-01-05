@@ -4,9 +4,12 @@
 <!DOCTYPE html>
 <html>
 <body>
-<div asp-validation-summary="All"></div>
+@* confirmation message *@
 <h1>@ViewBag.title, @ViewBag.Name!</h1>
+@* displays validation errors *@
+<div asp-validation-summary="All"></div>
 <br />
+@* displays username and it processed into an email*@
 <p>@Model.Username's e-mail will be @ViewBag.CU</p>
 </body>
 </html>

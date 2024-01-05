@@ -20,8 +20,10 @@ namespace DewJUnit1MVC.Controllers
 
         public IActionResult Output(Customer model)
         {
+            // checks if model state is valid, sets ViewBag properties accordingly
             if (ModelState.IsValid)
             {
+                // runs the customer model's method to create an email, if valid
                 ViewBag.CU = model.DetermineEmail();
                 ViewBag.Name = model.Name;
                 ViewBag.title = "Thank You";
